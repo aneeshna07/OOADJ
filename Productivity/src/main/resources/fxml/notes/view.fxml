@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="480.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Controller.notes.ViewController">
+    <top>
+        <VBox prefHeight="62.0" prefWidth="847.0">
+         <HBox prefHeight="45.0" prefWidth="782.0">
+            <children>
+               <Label alignment="CENTER" prefHeight="32.0" prefWidth="6.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Button mnemonicParsing="false" onAction="#onLogoutClick" prefHeight="7.0" prefWidth="69.0" text="Logout">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+               </Button>
+               <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="24.0" prefWidth="5.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Button layoutX="16.0" layoutY="10.0" mnemonicParsing="false" onAction="#onTasksClick" prefHeight="7.0" prefWidth="69.0" text="Tasks">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+               </Button>
+               <Label prefHeight="24.0" prefWidth="79.0" />
+               <Label fx:id="welcomeText" layoutX="16.0" layoutY="10.0" prefHeight="24.0" prefWidth="537.0">
+                  <font>
+                     <Font name="System Bold" size="13.0" />
+                  </font>
+                  <contextMenu>
+                     <ContextMenu fx:id="ContextMenu">
+                       <items>
+                         <MenuItem mnemonicParsing="false" onAction="#onLogoutClick" text="logout" />
+                       </items>
+                     </ContextMenu>
+                  </contextMenu>
+               </Label>
+            </children></HBox>
+            <ToolBar nodeOrientation="LEFT_TO_RIGHT" prefHeight="28.0" prefWidth="782.0">
+                <HBox alignment="CENTER_RIGHT">
+               <TextField fx:id="searchNotes" prefHeight="24.0" prefWidth="216.0" promptText="Search Notes" />
+               <Label prefHeight="32.0" prefWidth="6.0" />
+               <Button alignment="CENTER" centerShape="false" onAction="#onSearchByTitleClick" prefHeight="24.0" prefWidth="122.0" text="Search by Title" textAlignment="CENTER">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font>
+               </Button>
+                </HBox>
+            <Label prefHeight="16.0" prefWidth="0.0" />
+                 <Button alignment="CENTER" onAction="#onSearchByTagClick" prefHeight="24.0" prefWidth="117.0" text="Search by Tag">
+                     <font>
+                         <Font name="System Bold Italic" size="12.0" />
+                     </font>
+
+                 </Button>
+            <Label prefHeight="32.0" prefWidth="74.0" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteNoteClick" prefHeight="26.0" prefWidth="62.0" text="Delete">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onRefreshClick" prefHeight="26.0" prefWidth="73.0" text="Refresh">
+                <font>
+                    <Font name="System Bold Italic" size="12.0" />
+                </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="433.0" layoutY="14.0" onAction="#onNewNoteClick" prefHeight="26.0" prefWidth="66.0" text="+ New" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            </ToolBar>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="notesListView" prefHeight="447.0" prefWidth="222.0">
+         <contextMenu>
+            <ContextMenu fx:id="listViewContextMenu" />
+         </contextMenu></ListView>
+    </left>
+    <center>
+        <VBox fx:id="displayNoteVBox" prefHeight="373.0" prefWidth="559.0" style="-fx-background-color: white">
+         <HBox alignment="CENTER" prefHeight="31.0" prefWidth="600.0">
+            <children>
+               <Label layoutX="283.0" layoutY="10.0" prefHeight="30.0" prefWidth="10.0" />
+               <Label alignment="CENTER" prefHeight="32.0" prefWidth="50.0" text="Title:" textAlignment="RIGHT">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Label fx:id="displayTitle" prefHeight="30.0" prefWidth="220.0" />
+               <Label alignment="CENTER" layoutX="412.0" layoutY="10.0" prefHeight="31.0" prefWidth="12.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Label layoutX="59.0" layoutY="11.0" prefHeight="30.0" prefWidth="10.0" />
+               <Label alignment="CENTER" layoutX="112.0" layoutY="10.0" prefHeight="32.0" prefWidth="47.0" text="Tags:">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" layoutX="521.0" layoutY="10.0" prefHeight="32.0" prefWidth="10.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Label fx:id="displayTags" layoutX="60.0" layoutY="10.0" prefHeight="31.0" prefWidth="222.0" />
+               <Label alignment="CENTER" layoutX="167.0" layoutY="10.0" prefHeight="31.0" prefWidth="12.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox prefHeight="182.0" prefWidth="559.0">
+            <children>
+               <Label prefHeight="16.0" prefWidth="14.0" />
+               <Label fx:id="displayAbout" alignment="TOP_LEFT" prefHeight="190.0" prefWidth="542.0" />
+               <Label layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="14.0" />
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="559.0">
+            <children>
+               <Label alignment="CENTER" prefHeight="32.0" prefWidth="8.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Button alignment="CENTER" mnemonicParsing="false" onAction="#onEditNoteClick" prefHeight="26.0" prefWidth="49.0" text="Edit">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font>
+               </Button>
+               <Label alignment="CENTER" prefHeight="32.0" prefWidth="6.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <Button fx:id="viewImagesButton" layoutX="76.0" layoutY="13.0" mnemonicParsing="false" onAction="#onViewImagesClick" prefHeight="26.0" prefWidth="104.0" text="View Images">
+                  <font>
+                     <Font name="System Bold Italic" size="12.0" />
+                  </font>
+               </Button>
+            </children>
+         </HBox>
+         <Label prefHeight="0.0" prefWidth="35.0" />
+         <HBox prefHeight="141.0" prefWidth="600.0">
+            <children>
+               <Label alignment="CENTER" prefHeight="32.0" prefWidth="8.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <ImageView fx:id="image1" fitHeight="150.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true" />
+               <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="32.0" prefWidth="9.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <ImageView fx:id="image2" fitHeight="150.0" fitWidth="175.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+               <Label alignment="CENTER" layoutX="186.0" layoutY="10.0" prefHeight="32.0" prefWidth="9.0">
+                  <font>
+                     <Font name="System Bold Italic" size="13.0" />
+                  </font>
+               </Label>
+               <ImageView fx:id="image3" fitHeight="150.0" fitWidth="175.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+         </HBox>
+        </VBox>
+    </center>
+</BorderPane>

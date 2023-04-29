@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="84.0" text="Title :">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <TextField />
+            <Label layoutX="10.0" layoutY="15.0" prefHeight="37.0" prefWidth="76.0">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="256.0" layoutY="15.0" prefHeight="38.0" prefWidth="54.0" text="Tag :">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <TextField layoutX="72.0" layoutY="22.0" prefHeight="24.0" prefWidth="191.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="254.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="84.0" text="About :" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <TextArea prefHeight="253.0" prefWidth="493.0" />
+         </children>
+      </HBox>
+      <Label />
+      <HBox prefHeight="162.0" prefWidth="640.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="85.0" text="Images :">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Label>
+            <HBox prefHeight="161.0" prefWidth="492.0" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
